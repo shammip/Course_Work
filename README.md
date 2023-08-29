@@ -1,6 +1,6 @@
-# Computer Science 1: Starting Computing Course
+# Computer Science Projects
 
-These are some programs that I created in each course: 
-* Compressive Strength of Concrete (Data Science course)
-* Dictionary (Algorithms course)
-* Image Processing Application (Starting Computing course)
+These are some projects that I created in each course: 
+* Compressive Strength of Concrete (Data Science)
+* Dictionary (Algorithms) 
+* Image Processing Application (Starting Computing)
