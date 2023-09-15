@@ -1,26 +1,18 @@
-import sys
-
-# We will use a class called my trie node
+# class is called MyTrieNode
 class MyTrieNode:
-    # Initialize some fields 
-  
+    # initialize fields 
     def __init__(self, isRootNode):
-        #The initialization below is just a suggestion.
-        #Change it as you will.
-        # But do not change the signature of the constructor.
         self.isRoot = isRootNode
         self.isWordEnd = False # is this node a word ending node
         self.isRoot = False # is this a root node
         self.count = 0 # frequency count
-        self.next = {} # Dictionary mapping each character from a-z to 
+        self.next = {} # dictionary mapping each character from a-z to 
                        # the child node if any corresponding to that character.
 
+    #add a word to dictionary
     def addWord(self,w):
         # make sure length of word is greater than 0 
         assert(len(w) > 0)
-        # YOUR CODE HERE
-        # If you want to create helper/auxiliary functions, please do so.
-        
         # let current_node point to the root 
         current_node = self 
         # loop through each letter in the word
@@ -43,11 +35,8 @@ class MyTrieNode:
         current_node.count = current_node.count + 1
         return
 
-    def lookupWord(self,w):
-        # Return frequency of occurrence of the word w in the trie
-        # returns a number for the frequency and 0 if the word w does not occur.
-        # YOUR CODE HERE
-        
+    #returns a number for the frequency for word and 0 if the word does not occur.
+    def lookupWord(self,w):        
         # make sure length of word is greater than 0 
         assert(len(w) > 0)
         # let current_node point to the root 
@@ -62,6 +51,7 @@ class MyTrieNode:
         # end of word is reached so return the frequency of the word 
         return current_node.count
 
+    #autoComplete helper function
     def autoComplete_helper(self, w, current_node, answer):
         # if the current_node is the end of the word, 
         if current_node.isWordEnd == True:
@@ -72,12 +62,8 @@ class MyTrieNode:
             # recursively call the autoComplete_helper function 
             self.autoComplete_helper(w + letter, current_node.next[letter], answer)  
     
+    #returns list of word and its frequency
     def autoComplete(self,w):
-        #Returns possible list of autocompletions of the word w
-        #Returns a list of pairs (s,j) denoting that
-        #         word s occurs with frequency j
-        #YOUR CODE HERE
-        
         # make sure length of word is greater than 0 
         assert(len(w) > 0)
         # create an empty list called answer
@@ -96,24 +82,31 @@ class MyTrieNode:
         # return answer list 
         return answer
         
-# The original example: let us see if the code works
 
-t= MyTrieNode(True) # Create a root Trie node
-lst1=['test','testament','testing','ping','pin','pink','pine','pint','testing','pinetree']
-# Insert the words in lst1
+#examples
+
+# create a root trie node
+t= MyTrieNode(True) 
+
+#list of words
+lst1=['test','testament','testing','ping','pin','pink','pine','pint','testing','pinetree'] 
+
+#add each word from lst1
 for w in lst1:
     t.addWord(w)
     
-# Perform lookups
+#lookup words
 j = t.lookupWord('testy') # should return 0
 j2 = t.lookupWord('telltale') # should return 0
 j3 = t.lookupWord ('testing') # should return 2
+print(j, j2, j3)
 
-# Run autocompletes
+#run autocomplete
 lst3 = t.autoComplete('pi')
 print('Completions for \"pi\" are : ')
 print(lst3)
 
+#run autocomplete
 lst4 = t.autoComplete('tes')
 print('Completions for \"tes\" are : ')
 print(lst4)
