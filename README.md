@@ -2,7 +2,7 @@
 
 These are some projects that I created in each course: 
 * [Reinforcement Learning Model (AI)](reinforcement_learning_model.ipynb)
-   * Utilized **OpenAI's Gymnasium** and **Stable Baselines3** to test many **Reinforcement Learning** (RL) algorithms. The Lunar Lander environment from OpenAI Gymnasium was tested with RL models that were created using RL algorithms **(A2C, PPO, DQN)**, to determine which model resulted in highest reward. 
+   * Utilized **OpenAI's Gymnasium** and **Stable Baselines3** to test many **Reinforcement Learning** (RL) algorithms in **Python** on **Google Colab**. The Lunar Lander environment from OpenAI Gymnasium was tested with RL models that were created using RL algorithms **(A2C, PPO, DQN)**, to determine which model resulted in highest reward. 
 * [Compressive Strength of Concrete (Data Science)](compressive_strength_of_concrete.ipynb)
     * Created a multi-linear regression model to predict concrete compressive strength through data cleaning & exploratory data analysis using **Python** libraries: **NumPy**, **Pandas**, **Matplotlib**, **Seaborn**, **Statsmodels**
 * [Dictionary (Algorithms)](dictionary.py)
